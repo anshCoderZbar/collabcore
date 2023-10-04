@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Today, Yesterday } from "./function";
-import { Notifications } from "app/mock/Dashboard";
+import { Notifications as initialNotifications } from "app/mock/Dashboard";
 
 import { BsCheck2All } from "react-icons/bs";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 
 export const Notification = () => {
+  const [Notifications, setNotifications] = useState(initialNotifications);
+
   const uniqueDate = [...new Set(Notifications?.map((data) => data?.date))];
+
+  const handleMarkRead = () => {
+    const markAsUnread = Notifications?.map((data) => {
+      if (data?.unread === true) {
+        return {
+          ...data,
+          unread: false,
+        };
+      } else {
+        return { ...data };
+      }
+    });
+    setNotifications(markAsUnread);
+  };
+
   const groupByDate = uniqueDate?.map((date) => {
     return {
       date: date,
@@ -19,7 +36,7 @@ export const Notification = () => {
     <>
       <div className="notification_sidebtn">
         <button className="mark_archive">Archive</button>
-        <button className="mark_read">
+        <button onClick={handleMarkRead} className="mark_read">
           <BsCheck2All /> Mark all as read
         </button>
         <button className="view_notificatio_dots">
@@ -45,7 +62,7 @@ export const Notification = () => {
                 <div key={i} className="notification_wrapper">
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center notification_details">
-                      {/* {elm?.img && <img src={elm?.img} alt="logo" />} */}
+                      {elm?.img && <img src={elm?.img} alt="logo" />}
                       <p dangerouslySetInnerHTML={{ __html: elm?.heading }} />
                     </div>
                     <div className="time_stamp">

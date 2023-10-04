@@ -46,7 +46,7 @@
 }
 
 .nav-links p {
-  color: var(--gray-900);
+  color: var(--gray-700);
   margin: 15px 10px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -136,13 +136,19 @@
 }
 .head-input input::placeholder {
   font-size: 13px;
-  color: var(--main-color);
+  color: var(--gray-350);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 .search_icon {
   position: absolute;
   top: -5px;
   font-size: 20px;
-  color: var(--gray-900);
+  color: var(--gray-350);
+}
+
+.header_right {
+  gap: 30px;
 }
 
 /* toggle menu */
@@ -166,10 +172,19 @@
 }
 
 .bell_icon {
-  border-right: 3px solid var(--gray-50);
   font-size: 22px;
-  padding-right: 22px;
   color: var(--main-color);
+  position: relative;
+  line-height: 0;
+}
+.bell_icon::after {
+  content: "";
+  height: 40px;
+  width: 1px;
+  background-color: var(--gray-200);
+  position: absolute;
+  right: -10px;
+  top: -10px;
 }
 
 /* profile menu */
@@ -190,15 +205,26 @@
   margin-bottom: 4px;
   font-weight: 600;
   font-size: 15px;
-  color: var(--gray-800);
+  font-family: "Inter", sans-serif;
+  color: var(--blue-800);
 }
 
 .profile p {
   line-height: 1;
-  font-size: 14px;
-  opacity: 0.6;
+  font-size: 12px;
+  text-align: left;
   margin: 0;
-  color: var(--gray-400);
+  font-family: "Inter", sans-serif;
+  color: var(--gray-600);
+}
+
+.menu_down_icon {
+  color: var(--gray-600);
+  transition: 0.3s ease-in-out;
+}
+
+.menu_down_icon_rotate {
+  transform: rotate(180deg);
 }
 
 .img-box {
@@ -320,7 +346,6 @@
     font-size: 13px;
   }
   .bell_icon {
-    border-right: 2px solid var(--gray-50);
     font-size: 20px;
   }
   .head-input input::placeholder {
@@ -331,7 +356,8 @@
     font-size: 13px;
   }
   .profile p {
-    font-size: 12px;
+    font-size: 11px;
+    text-align: left;
   }
 }
 
@@ -357,5 +383,19 @@
   .go_back_icon {
     position: absolute;
     z-index: 99;
+  }
+  .head-input input {
+    position: relative;
+    border: none;
+    padding: 0 0 0 30px;
+  }
+  .header {
+    padding: 0 10px;
+  }
+  .profile p {
+    font-size: 11px;
+  }
+  .menu {
+    top: 70px;
   }
 }

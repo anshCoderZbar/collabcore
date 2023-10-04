@@ -51,6 +51,7 @@ export const EariningCard = () => {
     fill: {
       colors: ["#1751D0"],
     },
+
     series: series,
   };
 

@@ -176,6 +176,7 @@
 .notification_wrapper {
   border-bottom: 1px solid var(--gray-200);
   cursor: pointer;
+  padding: 0 13px;
 }
 
 .notification_details img {
@@ -185,12 +186,12 @@
 .notification_details p {
   margin-bottom: 0;
   margin-left: 10px;
-  color: var(--gray-300);
+  color: var(--gray-550);
   font-size: 16px;
 }
 
 .notification_details p strong {
-  color: var(--gray-800);
+  color: var(--gray-950);
   font-weight: 500;
   font-family: "Inter", sans-serif;
 }
@@ -313,5 +314,17 @@
   }
   .time_stamp p {
     font-size: 13px;
+  }
+  .notification_sec .mark_archive,
+  .notification_sec .mark_read {
+    font-size: 12px;
+    padding: 8px 6px;
+  }
+  .notification_sidebtn {
+    gap: 5px;
+    top: 16px;
+  }
+  .first-notification span {
+    font-size: 14px !important;
   }
 }

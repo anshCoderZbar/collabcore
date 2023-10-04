@@ -1,17 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { GoBell } from "react-icons/go";
+import { HiOutlineChevronDown } from "react-icons/hi";
 
 import user from "app/assets/user-img.jpg";
 
 export const Header = () => {
+  const menuRef = useRef(null);
   const [menuToggle, setMenuToggle] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef?.current?.contains(event?.target) &&
+        menuToggle
+      ) {
+        setMenuToggle(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [menuToggle, setMenuToggle]);
+
   return (
     <div className="header">
-      <div className={`position-relative w-75 ${openMenu ? "w-100" : ""}`}>
+      <div className={`position-relative w-100 ${openMenu ? "w-100" : ""}`}>
         {openMenu && (
           <div onClick={() => setopenMenu(false)} className={`go_back_icon`}>
             <IoMdArrowRoundBack />
@@ -35,27 +56,39 @@ export const Header = () => {
           <AiOutlineSearch />
         </div>
       </div>
-      <div className={`bell_icon  ${openMenu ? "d-none" : ""}`}>
-        <GoBell />
-      </div>
-      <div className={` ${openMenu ? "d-none" : ""}`}>
-        <div
-          className="d-flex align-items-center gap-2"
-          style={{ cursor: "pointer " }}
-          onClick={() => setMenuToggle(!menuToggle)}
-        >
-          <div className="img-box">
-            <img src={user} alt="some user image" />
-          </div>
-          <div className="profile">
-            <div className="user">
-              <h3>nicolelopez</h3>
-              <p>Nicole Lopez</p>
+      <div className="d-flex align-items-center header_right">
+        <div className={`bell_icon  ${openMenu ? "d-none" : ""}`}>
+          <GoBell />
+        </div>
+        <div className={` ${openMenu ? "d-none" : ""}`}>
+          <div
+            className="d-flex align-items-center gap-2"
+            style={{ cursor: "pointer " }}
+            onClick={() => setMenuToggle(!menuToggle)}
+          >
+            <div className="img-box">
+              <img src={user} alt="some user image" />
+            </div>
+            <div className="profile">
+              <div className="user">
+                <h3>nicolelopez</h3>
+                <p>Nicole Lopez</p>
+              </div>
+              <div
+                className={`menu_down_icon ${
+                  menuToggle ? "menu_down_icon_rotate" : ""
+                }`}
+              >
+                <HiOutlineChevronDown />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className={`menu ${menuToggle ? "dropdown_active" : ""}`}>
+        <div
+          ref={menuRef}
+          className={`menu ${menuToggle ? "dropdown_active" : ""}`}
+        >
           <ul>
             <li>
               <a href="#">Profile</a>
