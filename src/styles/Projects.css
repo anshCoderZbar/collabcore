@@ -1,0 +1,339 @@
+.project_component {
+  padding-top: 25px;
+}
+
+.project_top h2 {
+  color: var(--gray-300);
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+}
+.project_top a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.project_heading h1 {
+  margin: 25px 0;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.rdt_TableHeadRow {
+  background-color: var(--gray-100) !important;
+  color: var(--gray-800) !important;
+  font-size: 15px;
+  text-align: center;
+}
+
+.rdt_TableRow {
+  padding: 20px 0;
+}
+
+.rdt_TableRow:hover {
+  background-color: var(--gray-100) !important;
+}
+.rdt_TableCell {
+  font-size: 15px !important;
+}
+
+.company_table .table_para {
+  margin-bottom: 1px;
+  color: var(--main-color);
+  font-size: 17px;
+  font-weight: 600;
+}
+.table_sub_para {
+  margin-bottom: 1px;
+  font-size: 15px;
+  color: var(--blue-900);
+}
+
+.button_green {
+  background-color: var(--green-300);
+  border: 2px solid var(--green-500);
+  padding: 1px 10px;
+  border-radius: 25px;
+  color: var(--green-700);
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.button_green span {
+  margin-right: 5px;
+}
+
+/* single Product page */
+.team_assigned {
+  font-weight: 600;
+  color: var(--main-color);
+}
+
+.page-btn ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+  padding: 0;
+}
+.page-btn ul li button {
+  background-color: var(--gray-100);
+  padding: 7px 11px;
+  font-size: 15px;
+  border: 1px solid var(--gray-300);
+  border-radius: 5px;
+  color: var(--main-color);
+}
+
+.detail_box {
+  border: 1px solid var(--gray-300);
+  border-radius: 11px;
+  overflow: hidden;
+  background-color: var(--main-bg-color);
+}
+.detail_head {
+  background-color: var(--gray-100);
+  padding: 15px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--main-color);
+  border-bottom: 1px solid var(--gray-300);
+}
+.project_main_details {
+  padding: 30px;
+}
+.project_main_details p {
+  margin-bottom: 5px;
+  color: var(--main-color);
+}
+
+.project-box {
+  margin: 25px 0;
+}
+
+.detail_box ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+.detail_box ul li {
+  margin-bottom: 10px;
+}
+
+.detail_box ul li .span_head {
+  color: var(--blue-900);
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.detail_box ul li .span_details {
+  color: var(--main-color);
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin-top: 25px;
+}
+
+.project_main_description {
+  padding: 30px;
+}
+
+.project_main_description p {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--main-color);
+}
+
+.project-tags {
+  margin-top: 25px;
+}
+
+.project_btns {
+  font-size: 14px;
+  color: var(--main-color);
+  border: 1px solid var(--gray-300);
+  padding: 5px 15px;
+  border-radius: 25px;
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+.project-attachments {
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.pdf_details p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--main-color);
+  margin-bottom: 5px;
+}
+
+.pdf_view,
+.btn_download {
+  background-color: transparent;
+  border: none;
+  color: var(--blue-700);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-right: 5px;
+}
+.pdf_view {
+  border-right: 3px solid var(--gray-500);
+  padding-right: 15px;
+}
+.btn_download {
+  padding-left: 15px;
+}
+/* .bMuwEY,
+.cQAWmj {
+  width: calc(100% - 80px) !important;
+} */
+
+@media (max-width: 1550px) {
+  .project_top h2 {
+    font-size: 14px;
+  }
+  .project_top a {
+    font-size: 14px;
+  }
+  .project_heading h1 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+  .button_green {
+    border: 1px solid var(--green-500);
+    padding: 1px 8px;
+    font-size: 13px;
+  }
+  .company_table .table_para {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .iWyFZZ div:first-child {
+    font-size: 13px;
+  }
+  .pdf_view {
+    border-right: 2px solid var(--gray-500);
+    padding-right: 13px;
+  }
+  .pdf_view,
+  .btn_download {
+    font-size: 14px;
+  }
+  .page-btn ul li button {
+    padding: 7px 11px;
+    font-size: 13px;
+  }
+  .detail_box ul li .span_head {
+    font-size: 13px;
+  }
+  .detail_box ul li .span_details {
+    font-size: 14px;
+  }
+  .project_main_description p {
+    font-size: 14px;
+  }
+  .project_btns {
+    font-size: 12px;
+  }
+  .project_main_details p {
+    font-size: 14px;
+  }
+  .pdf_details {
+    width: 100%;
+    overflow: hidden;
+  }
+  .project_main_details {
+    padding: 26px;
+  }
+  .project_main_description {
+    padding: 26px;
+  }
+  .detail_head {
+    padding: 11px 25px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 1023px) {
+  .project_component {
+    overflow-x: hidden;
+  }
+}
+
+/* Define a media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  /* Hide the table on small screens */
+  .rdt_Table {
+    display: none;
+  }
+
+  /* Style the dropdown button */
+  .dropdown-button {
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Style the dropdown content links */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Show the dropdown content when the dropdown button is hovered over */
+  .dropdown-button:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .page-btn ul {
+    gap: 6px;
+  }
+  .page-btn ul li button {
+    padding: 7px 10px;
+    font-size: 13px;
+    line-height: 16px;
+    height: 100%;
+  }
+  .detail_head {
+    padding: 15px 15px;
+  }
+  .project_main_details {
+    padding: 15px;
+  }
+  .detail_box ul li .span_head {
+    margin-bottom: 4px;
+  }
+  .detail_box ul li .span_details {
+    margin-bottom: 4px;
+  }
+  .project_main_description {
+    padding: 15px;
+  }
+  .fp-vs {
+    row-gap: 25px;
+  }
+}

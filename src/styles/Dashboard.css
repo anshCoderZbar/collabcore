@@ -1,0 +1,317 @@
+.page_heading h1 {
+  margin: 25px 0;
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+.page_head_vs {
+  row-gap: 15px;
+}
+
+.dashboard_head_card {
+  border: 1px solid var(--gray-200);
+  box-shadow: 0px 2px 4px -1px rgba(10, 9, 11, 0.02),
+    0px 5px 13px -5px rgba(10, 9, 11, 0.05);
+  background-color: var(--main-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.card_top {
+  padding: 20px;
+}
+
+.card_text h3 {
+  color: var(--blue-800);
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+  margin-bottom: 0;
+}
+
+.info_dash_icon {
+  line-height: 0;
+  background-color: var(--gray-200);
+  margin-left: 8px;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--gray-550);
+}
+
+.view_card_detail {
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  color: var(--gray-600);
+  cursor: pointer;
+}
+
+.card_text p {
+  color: var(--gray-950);
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+  margin: 15px 0;
+  font-weight: 600;
+  line-height: 39px;
+  letter-spacing: -0.96px;
+}
+
+.pie_chart {
+  position: relative;
+  top: 20px;
+  margin: auto;
+}
+
+.perc_inc {
+  font-size: 20px;
+  color: var(--green-800) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-200);
+  height: 23px;
+  border-radius: 5px;
+  padding: 8px 8px 8px 2px;
+  margin-left: 9px;
+  text-align: center;
+}
+
+.perc_inc p {
+  font-size: 12px;
+  color: var(--green-800) !important;
+  font-weight: 400;
+  line-height: 18px;
+  font-family: "Inter", sans-serif;
+}
+
+.notifications {
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.notification_sec h2 {
+  margin: 30px 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+.notification_sidebtn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  right: 0;
+  top: 12px;
+}
+
+.notification_sec .mark_read {
+  background-color: var(--blue-500);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  color: var(--main-bg-color);
+  font-family: "Inter", sans-serif;
+}
+
+.notification_sec .mark_archive {
+  background-color: var(--main-bg-color);
+  font-size: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--gray-150);
+  border-radius: 6px;
+  box-shadow: 0px 1.5px 4px -1px rgba(10, 9, 11, 0.07);
+}
+
+.view_notificatio_dots {
+  border: none;
+  background-color: transparent;
+  color: var(--gray-600);
+  font-size: 20px !important;
+}
+
+.notifications .date {
+  border-top: 1px solid var(--gray-200);
+  background-color: var(--gray-200);
+  padding: 12px 20px;
+}
+
+.first-notification {
+  padding: 21px 13px !important;
+  background: var(--main-bg-color) !important;
+  border-bottom: 1px solid var(--gray-200) !important;
+}
+
+.first-notification span {
+  color: var(--gray-950) !important;
+  font-size: 16px !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.notifications .date span {
+  color: var(--gray-950);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.notification_details {
+  margin: 15px 0 20px 0;
+}
+
+.notification_wrapper {
+  border-bottom: 1px solid var(--gray-200);
+  cursor: pointer;
+}
+
+.notification_details img {
+  width: 50px;
+}
+
+.notification_details p {
+  margin-bottom: 0;
+  margin-left: 10px;
+  color: var(--gray-300);
+  font-size: 16px;
+}
+
+.notification_details p strong {
+  color: var(--gray-800);
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+.time_stamp {
+  display: flex;
+  align-items: center;
+}
+
+.time_stamp span {
+  margin-right: 15px;
+  display: block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: var(--blue-500);
+}
+
+.time_stamp p {
+  color: var(--gray-300);
+  margin: 0;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1550px) {
+  .page_heading h1 {
+    margin: 15px 0;
+    font-size: 23px;
+  }
+  .card_top {
+    padding: 15px;
+  }
+  .card_text h3 {
+    font-size: 16px;
+  }
+  .card_text p {
+    font-size: 20px;
+    margin: 9px 0;
+  }
+
+  .notification_sec h2 {
+    margin: 25px 0 15px 0;
+    font-size: 25px;
+  }
+  .notifications .date {
+    padding: 7px 14px;
+  }
+  .notifications .date span {
+    font-size: 13px;
+  }
+  .time_stamp span {
+    margin-right: 7px;
+    height: 7px;
+    width: 7px;
+  }
+  .time_stamp p {
+    font-size: 13px;
+  }
+
+  .notification_sec button {
+    font-size: 14px;
+  }
+  .notification_details p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 767px) {
+  .project_dashboard {
+    padding-top: 15px;
+  }
+  .page_heading h1 {
+    margin: 15px 0;
+    font-size: 20px;
+  }
+  .card_top {
+    padding: 12px;
+  }
+  .card_text h3 {
+    font-size: 16px;
+  }
+  .card_text p {
+    font-size: 20px;
+    margin: 13px 0;
+  }
+
+  .card_bottom {
+    padding: 12px;
+  }
+
+  .card_bottom p {
+    font-size: 13px;
+  }
+  .card_bottom button {
+    font-size: 13px;
+  }
+  .notification_sec h2 {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+  .notification_sec button {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .notifications .date span {
+    font-size: 13px;
+  }
+  .notification_details img {
+    width: 30px;
+  }
+  .notification_details p {
+    font-size: 13px;
+  }
+  .time_stamp p {
+    font-size: 13px;
+  }
+}

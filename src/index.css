@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap");
+
+:root[data-applied-mode="light"] {
+  color-scheme: light;
+  --main-color: #000;
+  --main-bg-color: #fff;
+  --red-100: #f0dfdf;
+  --red-500: #8f1414;
+  --secondary-bg-light: #f1f1f1;
+  --green-100: #ebfdf3;
+  --green-200: #e1faea;
+  --green-300: #b0f0c9;
+  --green-400: #05ab5d;
+  --green-500: #14b068;
+  --green-700: #197e53;
+  --green-800: #016626;
+  --blue-100: #e0f1f7;
+  --blue-500: #1751d0;
+  --blue-600: #443bff;
+  --blue-700: #204f99;
+  --blue-800: #344054;
+  --blue-900: #3f4660;
+  --gray-50: #eaeaea;
+  --gray-100: #fafafa;
+  --gray-150: #e6e6e6;
+  --gray-200: #eaecf0;
+  --gray-250: #dcdcde;
+  --gray-300: #9e9e9e;
+  --gray-400: #9f9f9f;
+  --gray-450: #a5a5a5;
+  --gray-500: #a9a9a9;
+  --gray-550: #7f7d83;
+  --gray-600: #667085;
+  --gray-700: #4f4d55;
+  --gray-800: #464646;
+  --gray-900: #252525;
+  --gray-950: #0a090b;
+}
+:root[data-applied-mode="dark"] {
+  color-scheme: dark;
+  --main-color: #fff;
+  --main-bg-color: #2b2b2b;
+  --green-100: #025728;
+  --green-300: #137639;
+  --green-400: #10af65;
+  --green-500: #71e2ad;
+  --blue-500: #3f7df9;
+  --blue-600: #655dffd4;
+  --blue-900: #bcbdc4;
+  --gray-100: #2b2b2b;
+  --gray-200: #3e3d3d;
+  --gray-300: #ebebeb;
+  --gray-400: #b9b3b3;
+  --gray-500: #cfcccc;
+  --gray-800: #ddd9d9;
+  --gray-900: #d8d4d4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: 'Inter', sans-serif; */
+}
+html,
+body {
+  background-color: var(--main-bg-color) !important;
+}
+
+.container {
+  max-width: 1500px !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.errorMessage {
+  color: #8f1414;
+  font-size: 13px;
+}
+
+.react-tooltip {
+  background-color: rgb(0 0 0 / 60%) !important;
+}
+.tooltip_txt {
+  display: block;
+  color: #fff !important;
+  padding: 6px !important;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+}

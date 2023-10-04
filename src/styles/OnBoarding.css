@@ -1,0 +1,262 @@
+/*  */
+.onboarding_header {
+  background-color: white;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.onBoard_auth_logo img {
+  width: 200px;
+  position: absolute;
+  left: 20px;
+}
+
+.onboard_steps {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+}
+
+.onboard_steps button {
+  color: var(--gray-450);
+  font-family: "Inter", sans-serif;
+  background: none;
+  border: none;
+  font-weight: 500;
+  letter-spacing: -0.05px;
+}
+
+.onboard_steps span {
+  color: #4f4d55;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.onboard_btn_active {
+  color: #112232 !important;
+}
+.form_onboard {
+  width: 30rem !important;
+  border: 1px solid #e6e6e6 !important;
+  padding: 12px 8px 12px 12px !important;
+  font-size: 14px !important;
+  font-family: "Inter", sans-serif;
+  color: var(--gray-550) !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  letter-spacing: -0.05px !important;
+  box-shadow: 0px 1.5px 4px -1px #0a090b12 !important;
+}
+.form_onboard:focus {
+  outline: none !important;
+  border: 1px solid #e6e6e6 !important;
+}
+
+.setup_acc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.setup_container h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 50px;
+  text-align: center;
+  line-height: 38.4px;
+  letter-spacing: -0.96px;
+}
+
+.setup-sub-head {
+  color: var(--gray-700);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.profile_set {
+  margin-top: 50px;
+}
+
+.input_onb {
+  border: 1px solid #e6e6e6 !important;
+  padding: 12px !important;
+  font-size: 14px !important;
+  box-shadow: 0px 1.5px 4px -1px rgba(10, 9, 11, 0.07) !important;
+}
+
+.input_onb:focus {
+  box-shadow: 0px 1.5px 4px -1px rgba(10, 9, 11, 0.07) !important;
+  outline: none !important;
+  border: 1px solid #e6e6e6 !important;
+}
+.input_onb::placeholder {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: var(--gray-550) !important;
+  font-weight: 400 !important;
+  line-height: 20px !important;
+  letter-spacing: -0.05px !important;
+}
+
+.guZdik {
+  border: 1px dashed #e6e6e6 !important;
+  padding: 40px 10px !important;
+}
+
+.upload_profile {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.upload_profile_img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.upload_profile_img img {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 35px;
+  text-align: center;
+}
+
+form input[type="submit"] {
+  color: #fff;
+  background: #1751d0;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.onpage_btm {
+  position: absolute;
+  bottom: 0px;
+}
+.onpage_btm p {
+  font-size: 13px;
+  color: var(--gray-700);
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.05px;
+}
+.privacy_policy {
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 1199px) {
+  .onBoard_auth_logo img {
+    width: 200px;
+  }
+  .onboard_steps {
+    font-size: 14px;
+  }
+  .setup_container h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .setup-sub-head {
+    font-size: 15px;
+  }
+  .profile_set {
+    margin-top: 30px;
+  }
+  .upload_profile {
+    margin-top: 30px;
+  }
+  .guZdik {
+    padding: 35px 10px !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .onBoard_auth_logo img {
+    width: 170px;
+  }
+  .onboard_steps {
+    font-size: 14px;
+  }
+  .setup_container h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .setup-sub-head {
+    font-size: 15px;
+  }
+  .profile_set {
+    margin-top: 30px;
+  }
+  .upload_profile {
+    margin-top: 30px;
+  }
+  .guZdik {
+    padding: 35px 10px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form_onboard {
+    width: 100% !important;
+    border: 1px solid #e6e6e6 !important;
+  }
+  .onBoard_auth_logo img {
+    width: 150px;
+    position: relative;
+    left: 0;
+  }
+  .onboarding_header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    row-gap: 10px;
+    padding: 15px;
+  }
+  .setup_container h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  .setup-sub-head {
+    font-size: 14px;
+  }
+  .profile_set {
+    margin-top: 25px;
+  }
+  .upload_profile {
+    margin-top: 25px;
+  }
+  .guZdik {
+    padding: 30px 10px !important;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .onboard_steps {
+    gap: 10px;
+    font-size: 14px;
+  }
+  .setup_container h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .guZdik {
+    padding: 25px 10px !important;
+  }
+}
