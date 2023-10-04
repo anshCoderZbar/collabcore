@@ -105,9 +105,10 @@ input[type="radio"] {
 
 .search_chat_icon {
   position: absolute;
-  top: 15px;
+  top: 17px;
   right: 10px;
-  color: var(--gray-900);
+  color: var(--gray-350);
+  line-height: 0;
 }
 
 .custom-form__search-wrapper input {
@@ -116,9 +117,18 @@ input[type="radio"] {
   border: 1px solid var(--gray-200) !important;
   padding: 15px;
   color: var(--main-color);
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  border-radius: 8px;
 }
 .custom-form__search-wrapper input:focus {
   box-shadow: none;
+}
+.custom-form__search-wrapper input::placeholder {
+  font-size: 13px;
+  color: var(--gray-350);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 .custom-form__send-wrapper input {
   padding-right: 3rem;

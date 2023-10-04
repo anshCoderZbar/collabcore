@@ -350,7 +350,6 @@
   }
   .head-input input::placeholder {
     font-size: 12px;
-    color: var(--gray-800);
   }
   .profile h3 {
     font-size: 13px;
