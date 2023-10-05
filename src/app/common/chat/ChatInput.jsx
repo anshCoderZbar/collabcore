@@ -16,7 +16,7 @@ export const ChatInput = () => {
   const [formInput, setFormInput] = useState("");
 
   const handleAddEmoji = (emojiData) => {
-    setFormInput((inputValue) => inputValue + emojiData.emoji);
+    setFormInput((inputValue) => inputValue + emojiData?.emoji);
   };
   const handleChange = (e) => {
     setFile([...file, e.target.files[0]]);

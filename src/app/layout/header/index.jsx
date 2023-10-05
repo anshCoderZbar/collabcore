@@ -6,6 +6,8 @@ import { GoBell } from "react-icons/go";
 import { HiOutlineChevronDown } from "react-icons/hi";
 
 import user from "app/assets/user-img.jpg";
+import { MenuIcons } from "app/mock/header";
+import { LogoutIcon } from "app/icons";
 
 export const Header = () => {
   const menuRef = useRef(null);
@@ -89,9 +91,38 @@ export const Header = () => {
           ref={menuRef}
           className={`menu ${menuToggle ? "dropdown_active" : ""}`}
         >
+          <div className="d-flex align-items-center gap-2 px-3 py-2 bg_btm_menu">
+            <div className="img-box">
+              <img src={user} alt="some user image" />
+            </div>
+            <div className="profile">
+              <div className="user">
+                <h3 className="text-start">nicolelopez</h3>
+                <p>nicolelopez@gmail.com</p>
+              </div>
+            </div>
+          </div>
           <ul>
-            <li>
-              <a href="#">Profile</a>
+            {MenuIcons?.map((menu, i) => {
+              return (
+                <li
+                  key={i}
+                  className={`${menu?.border_btm ? "bg_btm_menu" : ""}`}
+                >
+                  <a href="#">
+                    <span>{menu?.icon}</span>
+                    {menu?.name}
+                  </a>
+                </li>
+              );
+            })}
+            <li className="logout_btn">
+              <button>
+                <span>
+                  <LogoutIcon />
+                </span>
+                Logout
+              </button>
             </li>
           </ul>
         </div>

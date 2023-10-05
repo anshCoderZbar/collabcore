@@ -23,7 +23,7 @@
   transition: 0.3s ease-in-out;
 }
 .menu {
-  top: 70px;
+  top: 90px;
 }
 .menu_icon {
   position: absolute;
@@ -250,27 +250,17 @@
 
 .menu {
   position: absolute;
-  right: 16px;
-  width: 200px;
+  right: 20px;
+  width: 250px;
   /* min-height: 100px; */
   background: var(--main-bg-color);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transform: translateY(-10px);
   visibility: hidden;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
   transition: 300ms;
-}
-
-.menu::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  right: 14px;
-  width: 20px;
-  height: 20px;
-  background: var(--main-bg-color);
-  transform: rotate(45deg);
-  z-index: -1;
 }
 
 .dropdown_active {
@@ -287,33 +277,54 @@
   padding: 0;
   margin: 0;
   background: var(--main-bg-color);
+  border-top: 0;
+  border-radius: 8px;
 }
-
+.bg_btm_menu {
+  border-bottom: 1px solid var(--gray-200);
+}
 .menu ul li {
   list-style: none;
 }
 
 .menu ul li:hover {
-  background: var(--gray-100);
+  background: var(--gray-300);
 }
 
 .menu ul li a {
   text-decoration: none;
-  color: var(--main-color);
+  color: var(--blue-800);
   display: flex;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 20px;
   gap: 6px;
 }
-
-.menu ul li a i {
-  font-size: 1.2em;
+.menu ul li a span {
+  margin-right: 5px;
+  line-height: 0;
 }
+
 .dashboard_active {
   transform: translateX(0%) !important;
 }
 .calander_page {
   overflow: hidden;
+}
+
+.logout_btn button {
+  background: transparent;
+  border: none;
+  color: #b42318;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 15px 20px;
+}
+.logout_btn button span {
+  margin-right: 10px;
+  line-height: 0;
 }
 
 /* profile menu */
