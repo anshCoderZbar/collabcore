@@ -24,7 +24,10 @@ export const ChatInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormInput("");
-    console.log(formInput);
+    if (formInput?.length >= 1) {
+      alert(formInput);
+      setEmoji(false);
+    } else return;
   };
   return (
     <>
