@@ -61,7 +61,7 @@ export const userChating = [
   {
     sender: "Jenna McCarthy",
     timing: "Thursday 11:40am",
-    userImg: require("app/assets/logo2.png"),
+    userImg: require("app/assets/user-img.jpg"),
     message:
       "Hey Nicole, I’m Jenna! PR here at Forever 21. Please accept our collab, we can’t wait to work with you. Head over to our website and pick anything you’d like for the post.",
     sendByOtherUser: true,
@@ -69,14 +69,14 @@ export const userChating = [
   {
     sender: "Jenna McCarthy",
     timing: "Thursday 11:40am",
-    userImg: require("app/assets/logo2.png"),
+    userImg: require("app/assets/user-img.jpg"),
     message: "This tangerine top would look amazing!",
     sendByOtherUser: true,
   },
   {
     sender: "Jenna McCarthy",
     timing: "Thursday 11:40am",
-    userImg: require("app/assets/logo2.png"),
+    userImg: require("app/assets/user-img.jpg"),
     attachmentMsg: "Satin Cowl Neck Crop Top",
     attachment: require("app/assets/chat-message.png"),
     attachmentUrl: "forever21.com/us/2000468243.html...",
