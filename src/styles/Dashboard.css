@@ -113,8 +113,8 @@
   align-items: center;
   gap: 15px;
   position: absolute;
-  right: 0;
-  top: 12px;
+  right: 8px;
+  top: 11px;
 }
 
 .notification_sec .mark_read {
@@ -151,7 +151,7 @@
 }
 
 .first-notification {
-  padding: 21px 13px !important;
+  padding: 20px !important;
   background: var(--main-bg-color) !important;
   border-bottom: 1px solid var(--gray-200) !important;
 }

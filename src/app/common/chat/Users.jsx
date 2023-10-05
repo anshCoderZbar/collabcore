@@ -5,6 +5,7 @@ import { openChatRoom } from "store/ChatRoom";
 import { AiOutlineSearch } from "react-icons/ai";
 
 import { AllUsers } from "app/mock/chat";
+import { ChatFilterIcon } from "app/icons";
 
 export const Users = () => {
   const [, setShowChat] = useAtom(openChatRoom);
@@ -37,6 +38,9 @@ export const Users = () => {
       </div>
       <div className="messages-page__header mb-0 px-4 pt-3 pb-3">
         <span className="messages-page__title">Messages</span>
+        <span className="chat_filter_icon">
+          <ChatFilterIcon />
+        </span>
       </div>
       <div className="px-4">
         <div className="radio_container">
@@ -92,7 +96,7 @@ export const Users = () => {
               <div className="messaging-member__wrapper">
                 <div className="messaging-member__avatar">
                   <img src={el?.img} alt="users" loading="lazy" />
-                  {el?.active ? <div className="user-status"></div> : null}
+                  {/* {el?.active ? <div className="user-status"></div> : null} */}
                 </div>
 
                 <span className="messaging-member__name">{el?.userName}</span>
