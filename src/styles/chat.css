@@ -858,10 +858,10 @@ input[type="radio"] {
     padding: 10px;
   }
   .messaging-member__name {
-    font-size: 14px;
+    font-size: 13px;
   }
   .messages-page__title {
-    font-size: 20px;
+    font-size: 17px;
   }
   .user-profile__wrapper {
     padding-top: 6rem;
@@ -875,7 +875,13 @@ input[type="radio"] {
   }
 
   .messaging-member__message {
-    font-size: 13px;
+    font-size: 12px;
+  }
+  .time_stam_chat span {
+    margin-right: 4px;
+  }
+  .time_stam_chat {
+    font-size: 11px;
   }
   .chat-member__name {
     font-size: 15px;
@@ -929,11 +935,16 @@ input[type="radio"] {
     font-size: 13px;
   }
   .custom-form__search-wrapper input {
-    padding: 12px;
-    font-size: 13px;
+    padding: 10px 12px;
+    font-size: 12px;
   }
   .search_chat_icon {
-    top: 9px;
+    top: 13px;
+  }
+  .radio_container label {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 6px;
   }
   .messaging-member__wrapper {
     padding: 0.5rem 1rem;
