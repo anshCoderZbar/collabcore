@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useAtom } from "jotai";
 
 import { openChatRoom } from "store/ChatRoom";
-import { AiOutlineSearch } from "react-icons/ai";
 
 import { AllUsers } from "app/mock/chat";
 import { ChatFilterIcon } from "app/icons";
+
+import { AiOutlineSearch } from "react-icons/ai";
+import { BlueDotIcon } from "app/icons";
 
 export const Users = () => {
   const [, setShowChat] = useAtom(openChatRoom);
@@ -22,27 +24,27 @@ export const Users = () => {
 
   return (
     <>
-      <div className="messages-page__search mb-0 px-3 pb-3">
-        <div className="custom-form__search-wrapper">
-          <input
-            type="text"
-            className="form-control custom-form"
-            placeholder="Search"
-            value={userInput}
-            onChange={(e) => setUserInput(e?.target?.value)}
-          />
-          <div className="search_chat_icon">
-            <AiOutlineSearch />
+      <div className="user_top">
+        <div className="messages-page__search">
+          <div className="custom-form__search-wrapper">
+            <input
+              type="text"
+              className="form-control custom-form"
+              placeholder="Search"
+              value={userInput}
+              onChange={(e) => setUserInput(e?.target?.value)}
+            />
+            <div className="search_chat_icon">
+              <AiOutlineSearch />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="messages-page__header mb-0 px-4 pt-3 pb-3">
-        <span className="messages-page__title">Messages</span>
-        <span className="chat_filter_icon">
-          <ChatFilterIcon />
-        </span>
-      </div>
-      <div className="px-4">
+        <div className="messages-page__header ">
+          <span className="messages-page__title">Messages</span>
+          <span className="chat_filter_icon">
+            <ChatFilterIcon />
+          </span>
+        </div>
         <div className="radio_container">
           <input
             type="radio"
@@ -103,6 +105,14 @@ export const Users = () => {
                 <span className="messaging-member__message">
                   {el?.lastMessage}
                 </span>
+                <div className="time_stam_chat">
+                  {el?.pending && (
+                    <span>
+                      <BlueDotIcon />
+                    </span>
+                  )}
+                  {el?.lastMsgTiming}
+                </div>
               </div>
             </li>
           );

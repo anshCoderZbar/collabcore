@@ -4,12 +4,12 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { useAtom } from "jotai";
 import { openChatRoom } from "store/ChatRoom";
 import { openUserProfile } from "store/ChatRoom";
+import { ChatInput } from "./ChatInput";
+import { userChating } from "app/mock/chat";
 
 import { VerifyIcon } from "app/icons";
 import { AiOutlineLeft } from "react-icons/ai";
-
-import { ChatInput } from "./ChatInput";
-import { userChating } from "app/mock/chat";
+import { BsDot } from "react-icons/bs";
 
 export const ChatRoom = () => {
   const [, setShowChat] = useAtom(openChatRoom);
@@ -43,7 +43,10 @@ export const ChatRoom = () => {
                     Forever 21 <VerifyIcon />
                   </span>
                   <p className="chat-member__status">
-                    2 Members <span>1 Online</span>
+                    2 Members
+                    <span>
+                      <BsDot /> 1 Online
+                    </span>
                   </p>
                 </div>
               </div>

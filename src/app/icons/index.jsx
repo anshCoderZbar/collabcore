@@ -529,3 +529,22 @@ export const LogoutIcon = () => {
     </svg>
   );
 };
+
+export const BlueDotIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="11"
+      height="11"
+      viewBox="0 0 11 11"
+      fill="none"
+    >
+      <path
+        d="M5.5 9.75C7.84721 9.75 9.75 7.84721 9.75 5.5C9.75 3.15279 7.84721 1.25 5.5 1.25C3.15279 1.25 1.25 3.15279 1.25 5.5C1.25 7.84721 3.15279 9.75 5.5 9.75Z"
+        fill="#1751D0"
+        stroke="white"
+        stroke-width="1.5"
+      />
+    </svg>
+  );
+};
