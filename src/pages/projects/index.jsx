@@ -1,6 +1,5 @@
 import { Table } from "app/common/projects/Table";
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "styles/Projects.css";
 
