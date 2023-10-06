@@ -192,10 +192,13 @@
 .btn_download {
   padding-left: 15px;
 }
-/* .bMuwEY,
-.cQAWmj {
-  width: calc(100% - 80px) !important;
-} */
+.bnNclJ {
+  display: none !important;
+}
+
+.ghvCbP {
+  display: none !important  ;
+}
 
 @media (max-width: 1550px) {
   .project_top h2 {
