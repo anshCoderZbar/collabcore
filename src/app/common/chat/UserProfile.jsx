@@ -10,6 +10,7 @@ import pdf from "app/assets/dummy.pdf";
 import { VerifyIcon, CallIcon } from "app/icons";
 import { MessageIcon } from "app/icons";
 import { UserMessageIcon } from "app/icons";
+import { FileUploader } from "react-drag-drop-files";
 
 export const UserProfile = () => {
   const [__, setOpenProfile] = useAtom(openUserProfile);
@@ -169,6 +170,15 @@ export const UserProfile = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="px-3">
+          <FileUploader
+            name="file"
+            types={["JPG", "PNG", "GIF"]}
+            multiple={false}
+            maxSize={1}
+            hoverTitle="Drop here"
+          />
         </div>
       </div>
     </div>
