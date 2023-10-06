@@ -903,9 +903,7 @@ input[type="radio"] {
   .offer_date {
     font-size: 13px;
   }
-  .offer_amt {
-    padding: 12px 0;
-  }
+
   .offer_amt span {
     font-size: 12px;
   }
@@ -1016,9 +1014,7 @@ input[type="radio"] {
   .offer_main_details {
     padding: 15px;
   }
-  .offer_amt {
-    padding: 12px 0;
-  }
+
   .offer_amt span {
     padding: 4px 10px;
     font-size: 15px;
@@ -1131,9 +1127,7 @@ input[type="radio"] {
   .offer_date {
     font-size: 13px;
   }
-  .offer_amt {
-    padding: 10px 0;
-  }
+
   .offer_amt span {
     padding: 4px 7px;
     font-size: 12px;
