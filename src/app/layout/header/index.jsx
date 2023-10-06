@@ -8,6 +8,7 @@ import { HiOutlineChevronDown } from "react-icons/hi";
 import user from "app/assets/user-img.jpg";
 import { MenuIcons } from "app/mock/header";
 import { LogoutIcon } from "app/icons";
+import { VerifyIcon } from "app/icons";
 
 export const Header = () => {
   const menuRef = useRef(null);
@@ -73,7 +74,12 @@ export const Header = () => {
             </div>
             <div className="profile">
               <div className="user">
-                <h3>nicolelopez</h3>
+                <h3 className="d-flex align-items-center gap-2">
+                  nicolelopez
+                  <span>
+                    <VerifyIcon />
+                  </span>
+                </h3>
                 <p>Nicole Lopez</p>
               </div>
               <div
