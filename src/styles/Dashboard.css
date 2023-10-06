@@ -339,12 +339,11 @@
   .notification_details img {
     width: 30px;
   }
-  .notification_details p {
-    font-size: 13px;
-  }
+  .notification_details p,
   .time_stamp p {
-    font-size: 13px;
+    font-size: 12px !important;
   }
+
   .notification_sec .mark_archive,
   .notification_sec .mark_read {
     font-size: 12px;
@@ -355,6 +354,14 @@
     top: 16px;
   }
   .first-notification p {
-    font-size: 14px !important;
+    font-size: 13px !important;
+  }
+  .noti_comp span {
+    font-size: 9px;
+    padding: 2px 5px;
+    margin-left: 5px;
+  }
+  .unread_noti {
+    display: none;
   }
 }
