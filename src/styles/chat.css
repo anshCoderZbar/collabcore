@@ -709,10 +709,11 @@ input[type="radio"] {
 }
 
 .user-profile__name {
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 15px;
   color: var(--main-color);
   font-size: 18px;
+  font-family: "Inter", sans-serif;
 }
 
 .user-profile__details {
@@ -827,7 +828,14 @@ input[type="radio"] {
   background: var(--main-bg-color);
   border-top-left-radius: 0 !important;
 }
-
+.accordion-header .accordion-button {
+  color: var(--blue-800) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+  letter-spacing: -0.05px !important;
+}
 .offerSendBtn {
   display: block;
   float: right;
