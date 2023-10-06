@@ -79,6 +79,7 @@ export const ChatRoom = () => {
                     {isNewSender && (
                       <div className="chat__user">
                         <h2>{data?.sender}</h2>
+                        <span>Thursday 11:40am</span>
                       </div>
                     )}
                     {data?.offerAmt && (

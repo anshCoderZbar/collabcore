@@ -70,7 +70,7 @@ input[type="radio"] {
   font-weight: 600;
   border-radius: 7px;
   overflow: hidden;
-  transition: linear 0.3s;
+  transition: 0.3s linear;
   color: var(--gray-600);
   padding: 10px 6px;
   width: 100%;
@@ -369,6 +369,11 @@ input[type="radio"] {
   justify-content: flex-start;
   padding: 0;
 }
+.chat__user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .chat__user h2 {
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -386,6 +391,14 @@ input[type="radio"] {
   border: 1px solid var(--gray-200);
   padding: 15px;
   margin-bottom: 0;
+}
+.chat__user span {
+  color: var(--gray-500);
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 }
 .msg_img {
   background-color: var(--gray-300);
@@ -715,9 +728,13 @@ input[type="radio"] {
   right: 0;
   width: 1rem;
   height: 1rem;
-  background-color: var(--colour-text-lighter);
+  background-color: var(--green-700);
   border: 3px solid white;
   border-radius: 50%;
+}
+
+.unactive {
+  background-color: var(--gray-600) !important;
 }
 
 .user-status--online {
@@ -956,7 +973,7 @@ input[type="radio"] {
     right: 0;
     z-index: 2;
     transform: translateX(100%);
-    transition: 0.3s ease-in-out 0.1s;
+    transition: transform 0.3s ease-in-out 0.1s;
     background-color: var(--bg-page);
     box-shadow: -3px 0 3px rgba(0, 0, 0, 0.06);
   }

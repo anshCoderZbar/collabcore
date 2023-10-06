@@ -3,12 +3,13 @@ import { useAtom } from "jotai";
 
 import { openUserProfile } from "store/ChatRoom";
 
-import { BsSend } from "react-icons/bs";
-import { BiSolidPhoneCall } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
 import pdfIcon from "app/assets/pdf_icon.png";
 import pdf from "app/assets/dummy.pdf";
+import { VerifyIcon, CallIcon } from "app/icons";
+import { MessageIcon } from "app/icons";
+import { UserMessageIcon } from "app/icons";
 
 export const UserProfile = () => {
   const [__, setOpenProfile] = useAtom(openUserProfile);
@@ -40,7 +41,9 @@ export const UserProfile = () => {
         />
       </div>
       <div className="user-profile__details mt-1">
-        <span className="user-profile__name">Forever 21</span>
+        <span className="user-profile__name d-flex align-items-center justify-content-center gap-1">
+          Forever 21 <VerifyIcon />
+        </span>
       </div>
       <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
         <div className="accordion-item">
@@ -62,20 +65,44 @@ export const UserProfile = () => {
             aria-labelledby="panelsStayOpen-headingOne"
           >
             <div className="accordion-body">
-              <div className="member-profile">
-                <img
-                  src={require("app/assets/user-img.jpg")}
-                  alt="user name"
-                  className="user-image"
-                />
+              <div className="member-profile mb-4">
+                <div className="position-relative">
+                  <img
+                    src={require("app/assets/user-img.jpg")}
+                    alt="user name"
+                    className="user-image"
+                  />
+                  <div className="user-status"></div>
+                </div>
                 <div className="user-details">
                   <p className="user-name">Jenna McCarthy</p>
                   <div className="action-icons">
                     <button className="calling-icon">
-                      <BiSolidPhoneCall />
+                      <CallIcon />
                     </button>
                     <button className="share-icon">
-                      <BsSend />
+                      <UserMessageIcon />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="member-profile mb-4">
+                <div className="position-relative">
+                  <img
+                    src={require("app/assets/user-img.jpg")}
+                    alt="user name"
+                    className="user-image"
+                  />
+                  <div className="user-status unactive"></div>
+                </div>
+                <div className="user-details">
+                  <p className="user-name">Nick Mendes</p>
+                  <div className="action-icons">
+                    <button className="calling-icon">
+                      <CallIcon />
+                    </button>
+                    <button className="share-icon">
+                      <UserMessageIcon />
                     </button>
                   </div>
                 </div>
