@@ -9,6 +9,7 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { useToken } from "lib/utils/UseToken";
 import { DarkModeIcon } from "app/icons";
 import { SettingIcon } from "app/icons";
+import { sidebarShortcuts } from "app/mock/sidebar";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
@@ -61,8 +62,8 @@ export const Sidebar = () => {
         <img src={logo} alt="logo" />
       </Link>
       <div className="nav-links">
+        <p>General</p>
         <ul className="nav-items">
-          <p>General</p>
           {SidebarData?.map((menu, i) => {
             return (
               <li
@@ -91,8 +92,38 @@ export const Sidebar = () => {
         </ul>
       </div>
       <div className="nav-links side_sec">
+        <p>Shortcuts</p>
         <ul className="nav-items">
-          <p>Preferences</p>
+          {sidebarShortcuts?.map((menu, i) => {
+            return (
+              <li
+                key={i}
+                className={`${
+                  window?.location?.pathname === menu?.slug
+                    ? "side_active "
+                    : ""
+                }`}
+              >
+                <div className="d-flex gap-2 align-items-center   ">
+                  <div
+                    className={`sidebar_icon ${
+                      window?.location?.pathname === menu?.slug
+                        ? "sidebar_icon_active "
+                        : ""
+                    }`}
+                  >
+                    {menu?.icon}
+                  </div>
+                  <Link to={menu?.slug}>{menu?.name}</Link>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="nav-links side_sec">
+        <p>Preferences</p>
+        <ul className="nav-items">
           <li>
             <div
               className="d-flex gap-2 align-items-center"
@@ -110,21 +141,6 @@ export const Sidebar = () => {
                 <SettingIcon />
               </div>
               <button className="side_btn">Settings</button>
-            </div>
-          </li>
-          <li>
-            <div
-              onClick={() => {
-                console.log("hello world");
-                removeToken();
-                navigate("/login");
-              }}
-              className="d-flex gap-2 align-items-center"
-            >
-              <div className="icon">
-                <TbLogout />
-              </div>
-              <button className="side_btn">Logout</button>
             </div>
           </li>
         </ul>

@@ -25,6 +25,7 @@ export const Notifications = [
     heading: "<strong>Forever 21</strong> marked your sponsored post project",
     unread: true,
     img: require("app/assets/logo1.png"),
+    completed: true,
     time: "12:22",
   },
   {

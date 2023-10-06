@@ -11,6 +11,23 @@ export const ProjectCard = () => {
       width: 380,
       type: "donut",
     },
+    plotOptions: {
+      pie: {
+        donut: {
+          labels: {
+            show: true,
+            total: {
+              show: true,
+              formatter: function (w) {
+                return w.globals.seriesTotals.reduce((a, b) => {
+                  return `${a}`;
+                });
+              },
+            },
+          },
+        },
+      },
+    },
 
     dataLabels: {
       enabled: false,

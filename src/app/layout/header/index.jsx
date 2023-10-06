@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useToken } from "lib/utils/UseToken";
 
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -11,6 +13,8 @@ import { LogoutIcon } from "app/icons";
 import { VerifyIcon } from "app/icons";
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const { removeToken } = useToken();
   const menuRef = useRef(null);
   const [menuToggle, setMenuToggle] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
@@ -74,7 +78,7 @@ export const Header = () => {
             </div>
             <div className="profile">
               <div className="user">
-                <h3 className="d-flex align-items-center gap-2">
+                <h3 className="d-flex align-items-center gap-1 md-gap-2">
                   nicolelopez
                   <span>
                     <VerifyIcon />
@@ -103,7 +107,7 @@ export const Header = () => {
             </div>
             <div className="profile">
               <div className="user">
-                <h3 className="text-start">nicolelopez</h3>
+                <h3 className="text-start menu_li_head">nicolelopez</h3>
                 <p>nicolelopez@gmail.com</p>
               </div>
             </div>
@@ -123,11 +127,16 @@ export const Header = () => {
               );
             })}
             <li className="logout_btn">
-              <button>
+              <button
+                onClick={() => {
+                  removeToken();
+                  navigate("/login");
+                }}
+              >
                 <span>
                   <LogoutIcon />
                 </span>
-                Logout
+                Log out
               </button>
             </li>
           </ul>

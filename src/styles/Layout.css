@@ -13,7 +13,7 @@
   z-index: 99;
   height: 100vh;
   width: 280px;
-  padding: 20px;
+  padding: 20px 16px;
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 1;
@@ -39,7 +39,7 @@
 }
 .logo img {
   width: 190px;
-  margin: 10px 0 30px 0;
+  margin: 10px 0 30px 8px;
 }
 .side_row {
   padding: 25px;
@@ -49,17 +49,20 @@
 }
 
 .nav-links p {
-  color: var(--gray-700);
-  margin: 15px 10px;
+  margin: 15px 10px 6px 10px;
+  color: var(--gray-350);
   font-family: "Inter", sans-serif;
-  font-weight: 400;
   font-size: 12px;
+  font-style: normal;
+  font-weight: 475;
+  line-height: 20px;
+  letter-spacing: -0.05px;
 }
 .nav-links ul {
   padding: 0;
   margin: 0;
   list-style: none;
-  margin-top: 15px;
+  margin-top: 7px;
 }
 .sidebar_icon {
   font-size: 25px;
@@ -70,19 +73,19 @@
   stroke: #fff !important;
 }
 .nav-links ul li {
-  padding: 17px 17px;
-  border-radius: 12px;
+  padding: 10px 11px;
+  border-radius: 8px;
   transition: 0.2s ease-in-out;
 }
 .nav-links ul li a {
   text-decoration: none;
   color: var(--gray-800);
-  font-size: 15px;
-  text-transform: uppercase;
+  font-size: 14px;
+  text-transform: capitalize;
   font-weight: 400;
   font-family: "Inter", sans-serif;
   position: relative;
-  top: 2px;
+  top: 1px;
 }
 
 .side_active {
@@ -95,16 +98,15 @@
 .side_active .icon {
   color: var(--gray-100) !important;
 }
-
 .side_sec {
-  margin-top: 50px;
+  margin-top: 24px;
 }
 .side_btn {
   border: none;
   background-color: transparent;
   color: var(--gray-800);
-  font-size: 15px;
-  text-transform: uppercase;
+  font-size: 14px;
+  text-transform: capitalize;
   position: relative;
   top: 2px;
   font-weight: 400;
@@ -297,11 +299,17 @@
   display: flex;
   align-items: center;
   padding: 10px 20px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
   gap: 6px;
 }
 .menu ul li a span {
   margin-right: 5px;
   line-height: 0;
+}
+
+.menu_li_head {
+  margin-bottom: 8px !important;
 }
 
 .dashboard_active {
@@ -345,7 +353,7 @@
     margin: 10px 0 15px 0;
   }
   .nav-links p {
-    margin: 10px 10px;
+    margin: 10px 9px 6px 10px;
   }
   .icon {
     font-size: 20px;
@@ -354,9 +362,7 @@
   .nav-links ul li a {
     font-size: 13px;
   }
-  .nav-links ul li {
-    padding: 13px 13px;
-  }
+
   .side_btn {
     font-size: 13px;
   }
@@ -387,10 +393,20 @@
   }
   .header {
     padding: 0 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgb(0 0 0 / 0%), 0 3px 6px rgb(0 0 0 / 3%);
+  }
+  .side_sec {
+    margin-top: 17px;
+  }
+  .nav-links ul {
+    margin-top: 2px;
   }
 }
 @media only screen and (max-width: 767px) {
+  .web_layout {
+    grid-template-rows: 62px 1fr;
+  }
+
   .search_icon {
     position: relative;
     pointer-events: all;
@@ -414,5 +430,15 @@
   }
   .profile p {
     font-size: 11px;
+  }
+  .img-box {
+    width: 36px;
+    height: 36px;
+  }
+  .bell_icon::after {
+    display: none;
+  }
+  .header_right {
+    gap: 30px;
   }
 }

@@ -151,6 +151,85 @@ export const InsightIcon = () => {
   );
 };
 
+export const CampaignsIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M8.99976 9.06761V8.99993M15.7218 15.7219C14.3001 17.1437 10.138 15.2868 6.42555 11.5743C2.71313 7.86192 0.856192 3.69983 2.27797 2.27805C3.69975 0.856268 7.86184 2.7132 11.5743 6.42562C15.2867 10.138 17.1436 14.3001 15.7218 15.7219ZM2.27811 15.722C0.856336 14.3002 2.71327 10.1381 6.42569 6.42567C10.1381 2.71324 14.3002 0.856311 15.722 2.27809C17.1438 3.69987 15.2868 7.86196 11.5744 11.5744C7.86199 15.2868 3.69989 17.1437 2.27811 15.722Z"
+        stroke="#344054"
+        stroke-width="1.3"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+export const CreateProjectIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <rect width="18" height="18" rx="6" fill="#1751D0" />
+      <path
+        d="M9 5.625L9 12.375M12.375 9L5.625 9"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
+
+export const CommentManagerIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M7.3125 7.3125L8.57812 8.57812L11.5312 5.625M8.77989 12.2283L5.25815 15.75V12.2283H3.9375C3.00552 12.2283 2.25 11.4727 2.25 10.5408V3.9375C2.25 3.00552 3.00552 2.25 3.9375 2.25H14.0625C14.9945 2.25 15.75 3.00552 15.75 3.9375V10.5408C15.75 11.4727 14.9945 12.2283 14.0625 12.2283H8.77989Z"
+        stroke="#344054"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const FilesIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M1.80076 6.31251L1.80069 12.9557C1.80068 14.0603 2.69611 14.9558 3.80069 14.9558L14.1997 14.9558C15.3043 14.9558 16.1997 14.0604 16.1998 12.9559L16.2 6.25935C16.2 5.70705 15.7523 5.25932 15.2 5.25932H9.06276L6.98899 3.04409H2.80036C2.24793 3.04409 1.80015 3.4915 1.80032 4.04393C1.80053 4.74073 1.80076 5.65887 1.80076 6.31251Z"
+        stroke="#344054"
+        stroke-width="1.3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
 export const DarkModeIcon = () => {
   return (
     <svg

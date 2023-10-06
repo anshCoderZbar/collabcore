@@ -55,7 +55,8 @@ export const Notification = () => {
         return (
           <div className="notification_table " key={i}>
             <div className={`date ${i === 0 ? "first-notification" : ""}`}>
-              <span>{dateTxt}</span>
+              <p>{dateTxt}</p>
+              {i === 0 && <span className="unread_noti ">7 notifications</span>}
             </div>
             {data?.elm?.map((elm, i) => {
               return (
@@ -64,6 +65,11 @@ export const Notification = () => {
                     <div className="d-flex align-items-center notification_details">
                       {elm?.img && <img src={elm?.img} alt="logo" />}
                       <p dangerouslySetInnerHTML={{ __html: elm?.heading }} />
+                      {elm?.completed && (
+                        <div className="noti_comp">
+                          <span>Completed</span>
+                        </div>
+                      )}
                     </div>
                     <div className="time_stamp">
                       {elm?.unread && <span></span>}

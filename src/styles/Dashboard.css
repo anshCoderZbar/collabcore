@@ -154,19 +154,24 @@
   padding: 20px !important;
   background: var(--main-bg-color) !important;
   border-bottom: 1px solid var(--gray-200) !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.first-notification span {
+.first-notification p {
   color: var(--gray-950) !important;
   font-size: 16px !important;
   font-family: "Inter", sans-serif !important;
+  margin-bottom: 0;
 }
 
-.notifications .date span {
+.notifications .date p {
   color: var(--gray-950);
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 14px;
+  margin-bottom: 0;
 }
 
 .notification_details {
@@ -211,11 +216,36 @@
 }
 
 .time_stamp p {
-  color: var(--gray-300);
+  color: var(--gray-550);
+  font-family: "Inter", sans-serif;
   margin: 0;
   font-size: 16px;
 }
 
+.apexcharts-datalabels-group {
+  position: relative;
+  top: 0;
+}
+.unread_noti {
+  color: var(--blue-400) !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 475 !important;
+  line-height: 16px !important;
+  border-radius: 5px;
+  background: var(--blue-50);
+  padding: 4px;
+}
+
+.noti_comp span {
+  color: var(--green-700);
+  background-color: var(--green-100);
+  border: 1px solid var(--green-300);
+  border-radius: 25px;
+  font-size: 12px;
+  padding: 3px 6px;
+  margin-left: 9px;
+}
 @media screen and (max-width: 1550px) {
   .page_heading h1 {
     margin: 15px 0;
@@ -239,7 +269,7 @@
   .notifications .date {
     padding: 7px 14px;
   }
-  .notifications .date span {
+  .notifications .date p {
     font-size: 13px;
   }
   .time_stamp span {
@@ -303,7 +333,7 @@
 }
 
 @media screen and (max-width: 575px) {
-  .notifications .date span {
+  .notifications .date p {
     font-size: 13px;
   }
   .notification_details img {
@@ -324,7 +354,7 @@
     gap: 5px;
     top: 16px;
   }
-  .first-notification span {
+  .first-notification p {
     font-size: 14px !important;
   }
 }

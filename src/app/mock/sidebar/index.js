@@ -1,8 +1,15 @@
-import { DashboardIcon } from "app/icons";
-import { BundleIcon } from "app/icons";
-import { MessageIcon } from "app/icons";
-import { CalanderIcon } from "app/icons";
-import { InsightIcon } from "app/icons";
+import {
+  DashboardIcon,
+  BundleIcon,
+  MessageIcon,
+  CalanderIcon,
+  InsightIcon,
+  CampaignsIcon,
+  MenuManagerIcon,
+  CreateProjectIcon,
+  CommentManagerIcon,
+  FilesIcon,
+} from "app/icons";
 
 export const SidebarData = [
   {
@@ -34,5 +41,38 @@ export const SidebarData = [
     name: "insights",
     slug: "/insights",
     icon: <InsightIcon />,
+  },
+  {
+    id: 6,
+    name: "Campaigns",
+    slug: "#",
+    icon: <CampaignsIcon />,
+  },
+];
+
+export const sidebarShortcuts = [
+  {
+    id: 1,
+    name: "Create a project",
+    slug: "#",
+    icon: <CreateProjectIcon />,
+  },
+  {
+    id: 1,
+    name: "Comments Manager",
+    slug: "#",
+    icon: <CommentManagerIcon />,
+  },
+  {
+    id: 1,
+    name: "Team Manager",
+    slug: "#",
+    icon: <MenuManagerIcon />,
+  },
+  {
+    id: 1,
+    name: "Files",
+    slug: "#",
+    icon: <FilesIcon />,
   },
 ];

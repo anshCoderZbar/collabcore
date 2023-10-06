@@ -55,7 +55,7 @@
   border-radius: 10px;
   border: 1px solid var(--gray-200);
   margin-bottom: 10px;
-  padding: 8px;
+  padding: 4px;
 }
 
 input[type="radio"] {
@@ -68,11 +68,11 @@ input[type="radio"] {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 7px;
   overflow: hidden;
   transition: linear 0.3s;
   color: var(--gray-600);
-  padding: 6px;
+  padding: 10px 6px;
   width: 100%;
   text-align: center;
 }
@@ -1025,6 +1025,12 @@ input[type="radio"] {
   }
   .user-profile__wrapper {
     padding-top: 7rem;
+  }
+  .search_chat_icon {
+    top: 13px;
+  }
+  .custom-form__search-wrapper input {
+    padding: 10px 12px;
   }
 }
 
