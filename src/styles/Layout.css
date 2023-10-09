@@ -64,6 +64,7 @@
   list-style: none;
   margin-top: 7px;
 }
+.icon,
 .sidebar_icon {
   font-size: 25px;
   stroke: var(--gray-800);
@@ -93,7 +94,7 @@
   color: var(--color-white) !important;
 }
 .side_active a {
-  color: var(--gray-100) !important;
+  color: #fff !important;
 }
 .side_active .icon {
   color: var(--gray-100) !important;
@@ -306,6 +307,7 @@
 .menu ul li a span {
   margin-right: 5px;
   line-height: 0;
+  stroke: var(--gray-800);
 }
 
 .menu_li_head {
