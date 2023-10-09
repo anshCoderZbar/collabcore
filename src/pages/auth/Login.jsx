@@ -1,18 +1,45 @@
-import React, { useEffect } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useGoogleLogin } from "@react-oauth/google";
 
 import "styles/Auth.css";
 import logo from "app/assets/logo.png";
-
-import user from "app/assets/user-img.jpg";
-
-import { FcGoogle } from "react-icons/fc";
 import { MetaIcon } from "app/icons";
-import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 export const Login = () => {
+  const [user, setUser] = useState([]);
+  const [profile, setProfile] = useState([]);
   useEffect(() => {
     document.documentElement.setAttribute("data-applied-mode", "light");
   }, []);
+
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => setUser(codeResponse),
+    onError: (error) => console.log("Login Failed:", error),
+  });
+
+  useEffect(() => {
+    if (user) {
+      axios
+        .get(
+          `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.access_token}`,
+              Accept: "application/json",
+            },
+          }
+        )
+        .then((res) => {
+          setProfile(res.data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [user]);
+
+  console.log(profile);
 
   return (
     <div className="auth_page">
@@ -28,7 +55,7 @@ export const Login = () => {
                 <p>Enter your credentials to access your account</p>
               </div>
               <div className="logins_socials">
-                <button className="googleLogin">
+                <button onClick={() => login()} className="googleLogin">
                   <span>
                     <FcGoogle />
                   </span>
