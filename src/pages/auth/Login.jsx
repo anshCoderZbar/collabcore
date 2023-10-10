@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
 
 import "styles/Auth.css";
-import logo from "app/assets/logo.png";
+import logo from "app/assets/user-img.jpg";
 import { MetaIcon } from "app/icons";
 import { FcGoogle } from "react-icons/fc";
 import { LoginUsingGoogle } from "rest/auth";
