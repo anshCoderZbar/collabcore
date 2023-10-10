@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
@@ -7,10 +6,11 @@ import "styles/Auth.css";
 import logo from "app/assets/logo.png";
 import { MetaIcon } from "app/icons";
 import { FcGoogle } from "react-icons/fc";
+import { LoginUsingGoogle } from "rest/auth";
 
 export const Login = () => {
-  const [user, setUser] = useState([]);
-  const [profile, setProfile] = useState([]);
+  const [user, setUser] = useState("");
+
   useEffect(() => {
     document.documentElement.setAttribute("data-applied-mode", "light");
   }, []);
@@ -20,26 +20,7 @@ export const Login = () => {
     onError: (error) => console.log("Login Failed:", error),
   });
 
-  useEffect(() => {
-    if (user) {
-      axios
-        .get(
-          `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
-          {
-            headers: {
-              Authorization: `Bearer ${user.access_token}`,
-              Accept: "application/json",
-            },
-          }
-        )
-        .then((res) => {
-          setProfile(res.data);
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [user]);
-
-  console.log(profile);
+  const loginByGoogle = LoginUsingGoogle(user?.access_token);
 
   return (
     <div className="auth_page">
@@ -76,48 +57,50 @@ export const Login = () => {
                 <div className="line"></div>
               </div>
               <div className="auth_input">
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control input_vss"
-                    placeholder="Enter Email"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="password"
-                    className="form-control input_vss"
-                    placeholder="Enter password"
-                  />
-                </div>
-                <div className="mb-3 form-check">
-                  <div className="d-flex justify-content-between">
-                    <div className="input_check">
-                      <input
-                        type="checkbox"
-                        className="form-check-input"
-                        id="exampleCheck1"
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor="exampleCheck1"
-                      >
-                        Remember machine for 30 days
-                      </label>
-                    </div>
-                    <div className="forget_password">
-                      <button>Forgot ?</button>
+                <form>
+                  <div className="mb-3">
+                    <input
+                      type="text"
+                      className="form-control input_vss"
+                      placeholder="Enter Email"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <input
+                      type="password"
+                      className="form-control input_vss"
+                      placeholder="Enter password"
+                    />
+                  </div>
+                  <div className="mb-3 form-check">
+                    <div className="d-flex justify-content-between">
+                      <div className="input_check">
+                        <input
+                          type="checkbox"
+                          className="form-check-input"
+                          id="exampleCheck1"
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="exampleCheck1"
+                        >
+                          Remember machine for 30 days
+                        </label>
+                      </div>
+                      <div className="forget_password">
+                        <button>Forgot ?</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="submit_btn">
-                  <input type="submit" value="Login" />
-                </div>
-                <div className="route_auth">
-                  <p>
-                    Not a member? <Link to="/sign-in">Create Account</Link>
-                  </p>
-                </div>
+                  <div className="submit_btn">
+                    <input type="submit" value="Login" />
+                  </div>
+                  <div className="route_auth">
+                    <p>
+                      Not a member? <Link to="/sign-in">Create Account</Link>
+                    </p>
+                  </div>
+                </form>
               </div>
             </div>
             <div className="d-flex justify-content-between align-items-center page_btm w-100">

@@ -5,15 +5,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "jotai";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "queryclient";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
-      <Provider>
-        <App />
-      </Provider>
-    </GoogleOAuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+        <Provider>
+          <App />
+        </Provider>
+      </GoogleOAuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

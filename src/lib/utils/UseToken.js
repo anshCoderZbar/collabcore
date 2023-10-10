@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { AUTH_TOKEN_KEY } from "lib/constants/utilsConstant";
+import { AUTH_TOKEN_KEY } from "lib/constants";
 
 export function useToken() {
   return {

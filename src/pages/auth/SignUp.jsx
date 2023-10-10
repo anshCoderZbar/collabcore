@@ -19,6 +19,7 @@ import { FormInput } from "components/Form-Input/Input";
 export const SignUp = () => {
   const navigate = useNavigate();
   const [validationResults, setValidationResults] = useState(passwordValidator);
+
   useEffect(() => {
     document.documentElement.setAttribute("data-applied-mode", "light");
   }, []);
