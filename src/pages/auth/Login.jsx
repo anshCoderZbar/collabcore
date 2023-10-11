@@ -25,7 +25,7 @@ export const Login = () => {
   });
 
   const loginByGoogle = LoginUsingGoogle(user?.access_token);
-  console.log(loginByGoogle?.data);
+  console.log(loginByGoogle);
 
   const handleFacebookLogin = async () => {
     try {
@@ -43,7 +43,7 @@ export const Login = () => {
     facebookAuth?.authResponse?.accessToken
   );
 
-  console.log(loginByFacebook?.data);
+  console.log(loginByFacebook);
 
   return (
     <div className="auth_page">
