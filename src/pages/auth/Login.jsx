@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
 
 import "styles/Auth.css";
-import logo from "app/assets/user-img.jpg";
+import logo from "app/assets/logo.png";
 import { MetaIcon } from "app/icons";
 import { FcGoogle } from "react-icons/fc";
 import { LoginUsingGoogle } from "rest/auth";
@@ -119,7 +119,10 @@ export const Login = () => {
               </p>
               <div className="d-flex align-items-center gap-2">
                 <div className="img-box">
-                  <img src={user} alt="some user " />
+                  <img
+                    src={require("app/assets/user-img.jpg")}
+                    alt="some user "
+                  />
                 </div>
                 <div className="auth_profile">
                   <div className="auth_user">
