@@ -25,6 +25,7 @@ export const Login = () => {
   });
 
   const loginByGoogle = LoginUsingGoogle(user?.access_token);
+  console.log(loginByGoogle);
 
   const handleFacebookLogin = async () => {
     try {
