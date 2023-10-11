@@ -131,6 +131,7 @@ export const Header = () => {
                 onClick={() => {
                   removeToken();
                   navigate("/login");
+                  window.location.reload();
                 }}
               >
                 <span>

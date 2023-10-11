@@ -12,9 +12,7 @@ import { SettingIcon } from "app/icons";
 import { sidebarShortcuts } from "app/mock/sidebar";
 
 export const Sidebar = () => {
-  const navigate = useNavigate();
   const [sidebarActive, setSidebarActive] = useState(false);
-  const { removeToken } = useToken();
   const setDark = () => {
     localStorage.setItem("theme", "dark");
     document.documentElement.setAttribute("data-applied-mode", "dark");
