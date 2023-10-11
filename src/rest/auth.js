@@ -13,3 +13,16 @@ export const LoginUsingGoogle = (token) => {
   const googleData = fetchDataFromGoogle?.data;
   return googleData;
 };
+
+export const LoginUsingFacebook = (userId, accessToken) => {
+  const fetchDataFromFacebook = useQuery(
+    ["Fetch-data-from-facebook"],
+    () => client.auth.authByFacebook(userId, accessToken),
+    {
+      enabled: userId?.length > 0,
+    }
+  );
+
+  const facebookData = fetchDataFromFacebook?.data;
+  return facebookData;
+};

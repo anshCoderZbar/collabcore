@@ -7,16 +7,19 @@ import { Provider } from "jotai";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "queryclient";
+import { FacebookProvider } from "react-facebook";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
-        <Provider>
-          <App />
-        </Provider>
-      </GoogleOAuthProvider>
+      <FacebookProvider appId={process.env.REACT_APP_FACEBOOK_APP_ID}>
+        <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+          <Provider>
+            <App />
+          </Provider>
+        </GoogleOAuthProvider>
+      </FacebookProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

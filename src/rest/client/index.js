@@ -13,6 +13,10 @@ class Client {
           },
         }
       ),
+    authByFacebook: (userId, token) =>
+      axios.get(
+        `${process.env.REACT_APP_FACEBOOK_ENDPOINT}/${userId}?fields=id,name,email,picture&access_token=${token}`
+      ),
   };
 }
 

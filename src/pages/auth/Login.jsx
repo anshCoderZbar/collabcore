@@ -1,26 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
+import { useLogin, useProfile } from "react-facebook";
 
 import "styles/Auth.css";
 import logo from "app/assets/logo.png";
 import { MetaIcon } from "app/icons";
 import { FcGoogle } from "react-icons/fc";
 import { LoginUsingGoogle } from "rest/auth";
+import { LoginUsingFacebook } from "rest/auth";
 
 export const Login = () => {
   const [user, setUser] = useState("");
+  const [facebookAuth, setFacebookAuth] = useState("");
+  const { login } = useLogin();
 
   useEffect(() => {
     document.documentElement.setAttribute("data-applied-mode", "light");
   }, []);
 
-  const login = useGoogleLogin({
+  const handleGoogleLogin = useGoogleLogin({
     onSuccess: (codeResponse) => setUser(codeResponse),
     onError: (error) => console.log("Login Failed:", error),
   });
 
   const loginByGoogle = LoginUsingGoogle(user?.access_token);
+
+  const handleFacebookLogin = async () => {
+    try {
+      const response = await login({
+        scope: "email",
+      });
+      setFacebookAuth(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const loginByFacebook = LoginUsingFacebook(
+    facebookAuth?.authResponse?.userID,
+    facebookAuth?.authResponse?.accessToken
+  );
+
+  console.log(loginByFacebook);
 
   return (
     <div className="auth_page">
@@ -36,7 +58,10 @@ export const Login = () => {
                 <p>Enter your credentials to access your account</p>
               </div>
               <div className="logins_socials">
-                <button onClick={() => login()} className="googleLogin">
+                <button
+                  onClick={() => handleGoogleLogin()}
+                  className="googleLogin"
+                >
                   <span>
                     <FcGoogle />
                   </span>
@@ -44,7 +69,7 @@ export const Login = () => {
                 </button>
               </div>
               <div className="logins_socials">
-                <button className="metaLogin">
+                <button onClick={handleFacebookLogin} className="metaLogin">
                   <span>
                     <MetaIcon />
                   </span>
