@@ -7,7 +7,6 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { GoBell } from "react-icons/go";
 import { HiOutlineChevronDown } from "react-icons/hi";
 
-import user from "app/assets/user-img.jpg";
 import { MenuIcons } from "app/mock/header";
 import { LogoutIcon } from "app/icons";
 import { VerifyIcon } from "app/icons";
@@ -140,6 +139,7 @@ export const Header = () => {
                   removeToken();
                   removeAuth();
                   navigate("/login");
+
                   window.location.reload();
                 }}
               >

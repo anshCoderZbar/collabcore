@@ -61,3 +61,38 @@ export const GoogleCallback = () => {
   });
   return googleMutation;
 };
+
+export const MetaCallback = () => {
+  const { setToken } = useToken();
+  const { setAuth } = useAuth();
+  const navigate = useNavigate();
+  const [, setAuthentication] = useAtom(userDetails);
+
+  const metaMutation = useMutation({
+    mutationFn: (details) => {
+      return client.auth.metaCallBack({
+        email: details?.email,
+        name: details?.name,
+        metaId: details?.id,
+        picture: details?.picture?.data?.url,
+      });
+    },
+    onSuccess: (data) => {
+      setToken(data?.token);
+      setAuth(data?.data);
+      setAuthentication(data?.data);
+      navigate("/");
+      toast.success(`Welcome ${data?.data?.name}`);
+    },
+    onError: () => {
+      toast.error("OOPS! some error occured");
+    },
+  });
+  return metaMutation;
+};
+
+export const RegisterUsingEmail = () => {
+  const registerMutation = useMutation({
+    mutationFn: (data) => client.auth.register,
+  });
+};
