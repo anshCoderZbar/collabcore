@@ -12,6 +12,7 @@ import {
   LoginUsingFacebook,
   GoogleCallback,
 } from "rest/auth";
+import { MetaCallback } from "rest/auth";
 
 export const Login = () => {
   const [user, setUser] = useState("");
@@ -47,12 +48,21 @@ export const Login = () => {
   );
 
   const sendDataFromGoogle = GoogleCallback();
+  const sendDataFromMeta = MetaCallback();
 
   useEffect(() => {
     if (loginByGoogle) {
       sendDataFromGoogle.mutate(loginByGoogle?.data);
     }
   }, [loginByGoogle]);
+
+  useEffect(() => {
+    if (loginByFacebook) {
+      sendDataFromMeta.mutate(loginByFacebook?.data);
+    }
+  }, [loginByFacebook]);
+
+  console.log(loginByFacebook?.data);
 
   return (
     <div className="auth_page">

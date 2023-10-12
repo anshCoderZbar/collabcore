@@ -21,6 +21,8 @@ class Client {
       ),
     googleCallBack: ({ ...parms }) =>
       HttpClient.post(API_ENDPOINTS.authGoogle, { ...parms }),
+    metaCallBack: ({ ...parms }) =>
+      HttpClient.post(API_ENDPOINTS.authMeta, { ...parms }),
   };
 }
 
