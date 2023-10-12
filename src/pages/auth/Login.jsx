@@ -7,12 +7,16 @@ import "styles/Auth.css";
 import logo from "app/assets/logo.png";
 import { MetaIcon } from "app/icons";
 import { FcGoogle } from "react-icons/fc";
-import { LoginUsingGoogle } from "rest/auth";
-import { LoginUsingFacebook } from "rest/auth";
+import {
+  LoginUsingGoogle,
+  LoginUsingFacebook,
+  GoogleCallback,
+} from "rest/auth";
 
 export const Login = () => {
   const [user, setUser] = useState("");
   const [facebookAuth, setFacebookAuth] = useState("");
+
   const { login } = useLogin();
 
   useEffect(() => {
@@ -25,7 +29,6 @@ export const Login = () => {
   });
 
   const loginByGoogle = LoginUsingGoogle(user?.access_token);
-  console.log(loginByGoogle);
 
   const handleFacebookLogin = async () => {
     try {
@@ -43,7 +46,13 @@ export const Login = () => {
     facebookAuth?.authResponse?.accessToken
   );
 
-  console.log(loginByFacebook);
+  const sendDataFromGoogle = GoogleCallback();
+
+  useEffect(() => {
+    if (loginByGoogle) {
+      sendDataFromGoogle.mutate(loginByGoogle?.data);
+    }
+  }, [loginByGoogle]);
 
   return (
     <div className="auth_page">

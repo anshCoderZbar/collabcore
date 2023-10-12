@@ -11,10 +11,16 @@ import user from "app/assets/user-img.jpg";
 import { MenuIcons } from "app/mock/header";
 import { LogoutIcon } from "app/icons";
 import { VerifyIcon } from "app/icons";
+import { useAuth } from "lib/utils/UseAuth";
+import { useAtom } from "jotai";
+import { userDetails } from "store/Authenticaton";
 
 export const Header = () => {
   const navigate = useNavigate();
   const { removeToken } = useToken();
+  const { removeAuth } = useAuth();
+
+  const [authenticaton] = useAtom(userDetails);
   const menuRef = useRef(null);
   const [menuToggle, setMenuToggle] = useState(false);
   const [openMenu, setopenMenu] = useState(false);
@@ -74,17 +80,17 @@ export const Header = () => {
             onClick={() => setMenuToggle(!menuToggle)}
           >
             <div className="img-box">
-              <img src={user} alt="some user image" />
+              <img src={authenticaton?.picture} alt="some user image" />
             </div>
             <div className="profile">
               <div className="user">
                 <h3 className="d-flex align-items-center gap-1 md-gap-2">
-                  nicolelopez
+                  {authenticaton?.username}
                   <span>
                     <VerifyIcon />
                   </span>
                 </h3>
-                <p>Nicole Lopez</p>
+                <p>{authenticaton?.name}</p>
               </div>
               <div
                 className={`menu_down_icon ${
@@ -103,12 +109,14 @@ export const Header = () => {
         >
           <div className="d-flex align-items-center gap-2 px-3 py-2 bg_btm_menu">
             <div className="img-box">
-              <img src={user} alt="some user image" />
+              <img src={authenticaton?.picture} alt="some user image" />
             </div>
             <div className="profile">
               <div className="user">
-                <h3 className="text-start menu_li_head">nicolelopez</h3>
-                <p>nicolelopez@gmail.com</p>
+                <h3 className="text-start menu_li_head">
+                  {authenticaton?.name}
+                </h3>
+                <p>{authenticaton?.email}</p>
               </div>
             </div>
           </div>
@@ -130,6 +138,7 @@ export const Header = () => {
               <button
                 onClick={() => {
                   removeToken();
+                  removeAuth();
                   navigate("/login");
                   window.location.reload();
                 }}

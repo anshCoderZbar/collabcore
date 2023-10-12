@@ -8,6 +8,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "queryclient";
 import { FacebookProvider } from "react-facebook";
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <FacebookProvider appId={process.env.REACT_APP_FACEBOOK_APP_ID}>
         <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
           <Provider>
+            <Toaster containerStyle={{ zIndex: "99999" }} />
             <App />
           </Provider>
         </GoogleOAuthProvider>
