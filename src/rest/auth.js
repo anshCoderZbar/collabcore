@@ -90,3 +90,9 @@ export const MetaCallback = () => {
   });
   return metaMutation;
 };
+
+export const RegisterUsingEmail = () => {
+  const registerMutation = useMutation({
+    mutationFn: (data) => client.auth.register,
+  });
+};

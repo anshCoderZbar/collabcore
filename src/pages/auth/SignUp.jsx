@@ -11,10 +11,9 @@ import { signInSchema } from "app/common/auth/validation";
 import logo from "app/assets/logo.png";
 import user from "app/assets/user-img.jpg";
 
-import { FcGoogle } from "react-icons/fc";
-import { MetaIcon } from "app/icons";
 import { ImCheckmark } from "react-icons/im";
 import { FormInput } from "components/Form-Input/Input";
+import { SocialLogins } from "app/common/auth/SocialLogins";
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -65,22 +64,7 @@ export const SignUp = () => {
                 <h2>Create Your account</h2>
                 <p>Enter the fields below to get started</p>
               </div>
-              <div className="logins_socials">
-                <button className="googleLogin">
-                  <span>
-                    <FcGoogle />
-                  </span>
-                  Sign in with Google
-                </button>
-              </div>
-              <div className="logins_socials">
-                <button className="metaLogin">
-                  <span>
-                    <MetaIcon />
-                  </span>
-                  Sign in with Meta
-                </button>
-              </div>
+              <SocialLogins />
               <div className="separator">
                 <div className="line"></div>
                 <h2>or</h2>

@@ -103,3 +103,16 @@ input[type="number"] {
   font-size: 12px;
   font-family: "Inter", sans-serif;
 }
+
+.full_loader {
+  background-color: #cfcfcfb5;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 99999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}

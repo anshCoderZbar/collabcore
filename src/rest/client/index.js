@@ -23,6 +23,8 @@ class Client {
       HttpClient.post(API_ENDPOINTS.authGoogle, { ...parms }),
     metaCallBack: ({ ...parms }) =>
       HttpClient.post(API_ENDPOINTS.authMeta, { ...parms }),
+    register: ({ ...params }) =>
+      HttpClient.post(API_ENDPOINTS.register, { ...params }),
   };
 }
 
