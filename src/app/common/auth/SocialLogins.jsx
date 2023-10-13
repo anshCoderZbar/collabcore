@@ -59,7 +59,11 @@ export const SocialLogins = () => {
   return (
     <>
       {sendDataFromGoogle?.isLoading || sendDataFromMeta?.isLoading ? (
-        <FullPageLoader />
+        <FullPageLoader
+          isLoading={
+            sendDataFromGoogle?.isLoading || sendDataFromMeta?.isLoading
+          }
+        />
       ) : null}
       <div className="logins_socials">
         <button onClick={() => handleGoogleLogin()} className="googleLogin">

@@ -5,9 +5,9 @@ export const baseURL = process.env.REACT_APP_BASE_URL;
 const Axios = axios.create({
   baseURL,
   timeout: 5000000,
-  headers: {
-    "Content-Type": "application/json",
-  },
+  // headers: {
+  //   "Content-Type": "application/json",
+  // },
 });
 
 export class HttpClient {

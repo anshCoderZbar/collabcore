@@ -2,17 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToken } from "lib/utils/UseToken";
 
-import { AiOutlineSearch } from "react-icons/ai";
-import { IoMdArrowRoundBack } from "react-icons/io";
-import { GoBell } from "react-icons/go";
-import { HiOutlineChevronDown } from "react-icons/hi";
-
-import { MenuIcons } from "app/mock/header";
-import { LogoutIcon } from "app/icons";
-import { VerifyIcon } from "app/icons";
+import { userDetails } from "store/Authenticaton";
 import { useAuth } from "lib/utils/UseAuth";
 import { useAtom } from "jotai";
-import { userDetails } from "store/Authenticaton";
+import { MenuIcons } from "app/mock/header";
+
+import { LogoutIcon } from "app/icons";
+import { VerifyIcon } from "app/icons";
+import { GoBell } from "react-icons/go";
+import { AiOutlineSearch } from "react-icons/ai";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { HiOutlineChevronDown } from "react-icons/hi";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -41,6 +41,8 @@ export const Header = () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [menuToggle, setMenuToggle]);
+
+  console.log(authenticaton);
 
   return (
     <div className="header">
@@ -79,7 +81,14 @@ export const Header = () => {
             onClick={() => setMenuToggle(!menuToggle)}
           >
             <div className="img-box">
-              <img src={authenticaton?.picture} alt="some user image" />
+              <img
+                src={
+                  authenticaton?.basepath
+                    ? `${authenticaton?.basepath}/${authenticaton?.picture}:`
+                    : authenticaton?.picture
+                }
+                alt="some user image"
+              />
             </div>
             <div className="profile">
               <div className="user">
