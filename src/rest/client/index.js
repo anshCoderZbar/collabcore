@@ -23,8 +23,11 @@ class Client {
       HttpClient.post(API_ENDPOINTS.authGoogle, { ...parms }),
     metaCallBack: ({ ...parms }) =>
       HttpClient.post(API_ENDPOINTS.authMeta, { ...parms }),
+    login: ({ ...params }) =>
+      HttpClient.post(API_ENDPOINTS.login, { ...params }),
     register: ({ ...params }) =>
       HttpClient.post(API_ENDPOINTS.register, { ...params }),
+    accountSetup: (data) => HttpClient.post(API_ENDPOINTS.accountSetup, data),
   };
 }
 

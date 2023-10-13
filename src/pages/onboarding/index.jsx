@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { useAtom } from "jotai";
+import { useNavigate } from "react-router-dom";
 import { FileUploader } from "react-drag-drop-files";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { FormInput } from "components/Form-Input/Input";
 import { onboardSchema } from "app/common/auth/validation";
+import { useToken } from "lib/utils/UseToken";
+import { registerationAtom } from "store/Register";
 
 import "styles/OnBoarding.css";
 import logo from "app/assets/logo.png";
 import user from "app/assets/user-img.jpg";
-import { useToken } from "lib/utils/UseToken";
-import { useNavigate } from "react-router-dom";
+
+import { AccountSetup } from "rest/auth";
+import { Loader } from "components/Loader/Loader";
 
 export const Onboarding = () => {
   useEffect(() => {
     document.documentElement.setAttribute("data-applied-mode", "light");
   }, []);
-  const navigate = useNavigate();
+
   const fileTypes = ["JPG", "PNG", "GIF"];
   const [file, setFile] = useState(null);
+  const [registeration] = useAtom(registerationAtom);
   const [img, setImg] = useState(user);
-
-  const { setToken } = useToken();
-
+  console.log(registeration);
   const {
     register,
     handleSubmit,
@@ -39,13 +43,18 @@ export const Onboarding = () => {
     }
   }, [file]);
 
+  const accountSetup = AccountSetup();
   const onBoard = (data) => {
-    localStorage.setItem(
-      "auth",
-      JSON.stringify({ userData: data, auth: true })
+    const formData = new FormData();
+    formData.append(
+      "email",
+      registeration?.user?.email || registeration?.email
     );
-    setToken(true);
-    navigate("/");
+    formData.append("image", file);
+    formData.append("name", data?.profileName);
+    formData.append("userName", data?.userName);
+    formData.append("userType", data?.select);
+    accountSetup.mutate(formData);
   };
 
   return (
@@ -119,9 +128,13 @@ export const Onboarding = () => {
                   hoverTitle="Drop here"
                 />
               </div>
-              <div className="mb-3">
-                <input type="submit" value="Next" />
-              </div>
+              {accountSetup?.isLoading ? (
+                <Loader isLoading={accountSetup?.isLoading} />
+              ) : (
+                <div className="mb-3">
+                  <input type="submit" value="Next" />
+                </div>
+              )}
             </form>
           </div>
         </div>

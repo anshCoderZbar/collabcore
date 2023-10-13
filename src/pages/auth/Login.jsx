@@ -9,7 +9,8 @@ import { SocialLogins } from "app/common/auth/SocialLogins";
 
 import "styles/Auth.css";
 import logo from "app/assets/logo.png";
-import { FullPageLoader } from "components/Loader/FullPageLoader";
+import { LoginUsingMail } from "rest/auth";
+import { Loader } from "components/Loader/Loader";
 
 export const Login = () => {
   const {
@@ -22,8 +23,10 @@ export const Login = () => {
     document.documentElement.setAttribute("data-applied-mode", "light");
   }, []);
 
+  const loginUsingMail = LoginUsingMail();
+
   const login = (data) => {
-    console.log(data);
+    loginUsingMail?.mutate(data);
   };
 
   return (
@@ -93,9 +96,13 @@ export const Login = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="submit_btn">
-                      <input type="submit" value="Login" />
-                    </div>
+                    {loginUsingMail?.isLoading ? (
+                      <Loader isLoading={loginUsingMail?.isLoading} />
+                    ) : (
+                      <div className="submit_btn">
+                        <input type="submit" value="Login" />
+                      </div>
+                    )}
                     <div className="route_auth">
                       <p>
                         Not a member? <Link to="/sign-in">Create Account</Link>

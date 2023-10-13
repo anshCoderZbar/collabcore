@@ -14,9 +14,10 @@ import user from "app/assets/user-img.jpg";
 import { ImCheckmark } from "react-icons/im";
 import { FormInput } from "components/Form-Input/Input";
 import { SocialLogins } from "app/common/auth/SocialLogins";
+import { RegisterUsingEmail } from "rest/auth";
+import { Loader } from "components/Loader/Loader";
 
 export const SignUp = () => {
-  const navigate = useNavigate();
   const [validationResults, setValidationResults] = useState(passwordValidator);
 
   useEffect(() => {
@@ -46,9 +47,10 @@ export const SignUp = () => {
     validatePassword(newPassword);
   };
 
+  const registerUsingEmail = RegisterUsingEmail();
+
   const signIn = (data) => {
-    console.log(data);
-    navigate("/account-setup");
+    registerUsingEmail?.mutate(data);
   };
 
   return (
@@ -168,9 +170,13 @@ export const SignUp = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="submit_btn">
-                    <input type="submit" value="Create Account" />
-                  </div>
+                  {registerUsingEmail?.isLoading ? (
+                    <Loader isLoading={registerUsingEmail?.isLoading} />
+                  ) : (
+                    <div className="submit_btn">
+                      <input type="submit" value="Create Account" />
+                    </div>
+                  )}
                 </form>
                 <div className="route_auth">
                   <p>
