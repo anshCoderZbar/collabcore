@@ -117,7 +117,14 @@ export const Header = () => {
         >
           <div className="d-flex align-items-center gap-2 px-3 py-2 bg_btm_menu">
             <div className="img-box">
-              <img src={authenticaton?.picture} alt="some user image" />
+              <img
+                src={
+                  authenticaton?.basepath
+                    ? `${authenticaton?.basepath}/${authenticaton?.picture}`
+                    : authenticaton?.picture
+                }
+                alt="some user image"
+              />
             </div>
             <div className="profile">
               <div className="user">
