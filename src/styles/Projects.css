@@ -37,6 +37,7 @@
 }
 .rdt_TableCell {
   font-size: 15px !important;
+  color: var(--gray-800);
 }
 
 .company_table .table_para {
@@ -198,6 +199,16 @@
 
 .ghvCbP {
   display: none !important  ;
+}
+.rdt_Pagination {
+  background-color: var(--main-bg-color) !important;
+  color: var(--main-color) !important;
+}
+.irfGmI button {
+  fill: var(--main-color) !important;
+}
+.rdt_TableRow {
+  background-color: var(--main-bg-color) !important;
 }
 
 @media (max-width: 1550px) {

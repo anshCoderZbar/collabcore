@@ -116,3 +116,10 @@ input[type="number"] {
   top: 0;
   left: 0;
 }
+.css-1419abu-MuiPaper-root,
+.css-s6u7kg .rs__cell,
+.rs__time,
+.rs__header {
+  background-color: var(--main-bg-color) !important;
+  color: var(--main-color) !important;
+}
