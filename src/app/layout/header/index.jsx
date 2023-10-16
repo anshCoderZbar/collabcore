@@ -84,7 +84,7 @@ export const Header = () => {
               <img
                 src={
                   authenticaton?.basepath
-                    ? `${authenticaton?.basepath}/${authenticaton?.picture}:`
+                    ? `${authenticaton?.basepath}/${authenticaton?.picture}`
                     : authenticaton?.picture
                 }
                 alt="some user image"
