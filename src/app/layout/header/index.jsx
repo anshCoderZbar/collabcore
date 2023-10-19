@@ -42,8 +42,6 @@ export const Header = () => {
     };
   }, [menuToggle, setMenuToggle]);
 
-  console.log(authenticaton);
-
   return (
     <div className="header">
       <div className={`position-relative w-100 ${openMenu ? "w-100" : ""}`}>
