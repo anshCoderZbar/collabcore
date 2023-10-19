@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import "styles/Modal.css";
 export const CustomModal = ({ isOpen, setIsOpen, children }) => {
+  const modalRef = useRef(null);
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        modalRef.current &&
+        !modalRef?.current?.contains(event?.target) &&
+        isOpen
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen, setIsOpen]);
+
   return (
     <div className={`custom-modal-overlay ${isOpen ? "active" : ""}`}>
-      <div className={`custom-modal ${isOpen ? "active" : ""} `}>
+      <div ref={modalRef} className={`custom-modal ${isOpen ? "active" : ""} `}>
         <a className="close-custom-modal" onClick={() => setIsOpen(false)}>
           <svg viewBox="0 0 20 20">
             <path
