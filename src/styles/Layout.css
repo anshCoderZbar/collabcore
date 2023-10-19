@@ -205,6 +205,7 @@
   cursor: pointer;
   text-align: end;
 }
+
 .profile h3 {
   line-height: 1;
   font-size: 15px;
@@ -212,8 +213,9 @@
   margin: 0;
   font-family: "Inter", sans-serif;
   color: var(--main-color);
-  font-weight: 500;
+  font-weight: 600;
 }
+
 .profile p {
   line-height: 1;
   font-size: 12px;
